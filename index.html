@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <!--
     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
@@ -9,18 +11,35 @@
     <title>COMPILADOR</title>
 </head>
 <body>
+
+
 <h1>ANÁLISE LÉXICA</h1>
 
 
 <div class="row col s6">
 
+<form id="formulario">
+    <fieldset>
+
     <h4>Analisador Léxico</h4>
 
-    <label id="plano"> <textarea name="codigophp" id="cphp" cols="30" rows="30"></textarea> </label>
-    <button class="btn waves-effect waves-light" id="analisar">Analisar</button>
+    <label name="codigo">CODIGO:</label>
+        <textarea name="codigo" id="codigo" cols="30" rows="30"></textarea>
+
+    </fieldset>
+
+    <a href="#" onclick="analisar()">Analisar</a>
+    <a href="#" onclick="trocar()">teste</a>
+</form>
+
+
 </div>
 
-
+<script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+<script src = "assets/js/exemplo.js"></script>
 
 </body>
 </html>

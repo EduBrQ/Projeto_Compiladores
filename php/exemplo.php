@@ -33,20 +33,10 @@ $tokenizer->add("COMENTARIO", $comment);
 $tokenizer->add("NOMENCLATURA", "/^[a-zA-Z]+/");
 
 
-//TENTANDO CAPTURAR O TEXTO DA TEXTAREA DA HTML
-function capturar($string, $comeco, $fim) {
-    $str = explode($comeco, $string);
-    $str = explode($fim, $str[1]);
-    return $str[0];
-}
-    $url = file_get_contents('index.html');
-    $input = capturar($url, '<textarea id="#cphp">', '</textarea>');
-    echo $input;
+    $input = '%var string = "Eu sou uma String" %var Num = 99999'
+              . 'if(string || num){ /*Eu sou um Comentario...*/ }';
 
-    //$input = '%var string = "Eu sou uma String" %var Num = 99999'
-    //          . 'if(string || num){ /*Eu sou um Comentario...*/ }';
-//FIM DA CAPTURA
-while($result = $tokenizer->tokenize($input)){
+    while($result = $tokenizer->tokenize($input)){
     echo $result."<br />";
 }
 echo $tokenizer->last_error;

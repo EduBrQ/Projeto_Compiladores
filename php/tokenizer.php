@@ -53,7 +53,7 @@ class Tokenizer
                 return $this->_last_error;
         }
     }
-} 
+}
 
 
 
