@@ -12,7 +12,15 @@ $(document).on('keyup', '#leitor', function () {
 
 $(document).on('click', '#analisar', function () {
 
-    alert(codigo);
+    console.log(codigo);
+
+    var id = new Token('id','ID');
+    var op = new Token('op', 'OP');
+
+
+// mostrando as propriedades nome dos objetos
+    console.log('tipo é ' + id.tipo); // envia "tipo é id" ao log
+    console.log('valor é ' + id.valor); // envia "valor é ID" ao log
 
 
     // codigo de teste

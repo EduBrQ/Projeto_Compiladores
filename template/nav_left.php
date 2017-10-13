@@ -20,6 +20,9 @@
             <li>
                 <a href="/?rota=analise_lexica/analise_lexica" class="active"><i class="fa fa-dashboard fa-fw"></i> Análise Léxica</a>
             </li>
+            <li>
+                <a href="/?rota=php/exemplo" class="active"><i class="fa fa-dashboard fa-fw"></i> Tokenizer</a>
+            </li>
 <!--            <li>-->
 <!--                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Conversões<span class="fa arrow"></span></a>-->
 <!--                <ul class="nav nav-second-level">-->

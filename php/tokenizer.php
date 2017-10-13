@@ -36,11 +36,11 @@ class Tokenizer
                 $input = trim(preg_replace($this->_delimeter."^".preg_quote($matches[0], $this->_delimeter).$this->_delimeter, "", $input));
                 return $matches[0];
             }
-            elseif(preg_match($this->_patterns[$i]['regex'], $input, $matches) === false)
-            {
-                    $this->_last_error = 'Erro ocorrido em $_patterns['.$i.']';
-                    return false;
-            }
+//            elseif(preg_match($this->_patterns[$i]['regex'], $input, $matches) == false)
+//            {
+//                    $this->_last_error = 'Erro ocorrido em $_patterns['.$i.']';
+//                    return false;
+//            }
         }
         return false;
     }

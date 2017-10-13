@@ -10,6 +10,9 @@
 <!-- Custom Theme JavaScript -->
 <script src="/assets/js/startmin.js"></script>
 
-<!--Algoritmo DDA-->
+<!-- Arquivos do tokenizer-->
+<script src="/assets/js/analise_lexica/tokenizer.js"></script>
+
+<!--Algoritmo de analise-->
 <script src="/assets/js/analise_lexica/analise_lexica.js"></script>
 
