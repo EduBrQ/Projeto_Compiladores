@@ -2,7 +2,6 @@
  * Created by eduardobq3 on 01/10/2017.
  */
 
-
 var codigo = "";
 
 $(document).on('keyup', '#leitor', function () {

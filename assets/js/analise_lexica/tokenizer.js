@@ -51,7 +51,8 @@ function tokenizer(codigo,TOKENS) {
                 'ABRE_PARENTESES': 1,
                 'FECHA_PARENTESES': 1,
                 'NUMERO' : 1,
-                'RESERVADA' : 1
+                'RESERVADA' : 1,
+                'IGUAL': 1
             };
 
             if (tokenName in set) {
@@ -63,6 +64,10 @@ function tokenizer(codigo,TOKENS) {
             }
             else if(tokenName in {'ERRADAS': 1}) {
                 //palavras doidas
+                throw 'Errado Porra!!!:\n' +
+                (text.substring(0, text.indexOf('\n')));
+                break;
+
             }
             else if(tokenName in {'EMPTY': 1}) {
                 // nestes casos o relacionamento entre o nome do token
