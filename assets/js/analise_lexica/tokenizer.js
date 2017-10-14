@@ -54,7 +54,14 @@ function tokenizer(codigo, TOKENS) {
                 'FECHA_PARENTESES': 1,
                 'NUMERO': 1,
                 'RESERVADA': 1,
-                'IGUAL': 1
+                'IGUAL': 1,
+                'PONTO_VIRGULA': 1,
+                'COMENTARIO': 1,
+                'INCREMENTO': 1,
+                'DECREMENTO': 1,
+                'SOMA': 1,
+                'SUBTRACAO': 1,
+                'MULTIPLICACAO': 1
             };
 
             if (tokenName in set) {

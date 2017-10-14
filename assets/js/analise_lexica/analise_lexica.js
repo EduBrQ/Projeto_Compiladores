@@ -17,14 +17,24 @@ $(document).on('click', '#analisar', function () {
         {name: 'ABRE_CHAVE', regex: /^({)/},
         {name: 'FECHA_CHAVE', regex: /^(})/},
         {name: 'FLUXO_DE_CONTROLE', regex: /^(if|else|while|do|for|foreach|switch)/},
-        {name: 'VARIAVEL', regex: /(^\$[a-zA-Z]+)/},
+        {name: 'VARIAVEL', regex: /(^[a-zA-Z]+)/},
         {name: 'COMPARACAO', regex: /^(==|&&|\|\|)/},
         {name: 'ABRE_PARENTESES', regex: /(^\()/},
         {name: 'FECHA_PARENTESES', regex: /(^\))/},
         {name: 'NUMERO', regex: /(^[0-9]+)/},
         {name: 'IGUAL', regex: /(^=)/},
         {name: 'ERRADAS', regex: /(^[A-Za-z])/},
-        {name: 'RESERVADA', regex: /^(break|case|continue|as|cacth|try|include|echo|die|final|class|new|or|private|protected|use|require|require_once|var|throw|)/},
+        {name: 'RESERVADA', regex: /^(break|case|continue|as|cacth|try|include|echo|die|final|class|new|or|private|protected|use|require|require_once|var|throw)/},
+        {name: 'PONTO_VIRGULA', regex: /^(;)/},
+        {name: 'INCREMENTO', regex: /(^\+\+)/},
+        {name: 'DECREMENTO', regex: /(^\-\-)/},
+
+        //OPERADORES ARITMETICOS
+        {name: 'SOMA', regex: /(^\+)/},
+        {name: 'SUBT', regex: /(^\-)/},
+        {name: 'MULTIPLICACAO', regex: /(^\*)/ },
+
+
     ];
 
     // CHAMA A FUNÇÃO TOKENIZER PASSANDO O CODIGO A SER ANALIZADO E AS REGRAS
