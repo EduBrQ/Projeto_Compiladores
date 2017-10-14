@@ -19,3 +19,5 @@
         </div>
     </div>
 </div>
+
+<?php include('modal.php'); ?>

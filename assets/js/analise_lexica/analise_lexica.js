@@ -2,6 +2,7 @@
  * Created by eduardobq3 on 01/10/2017.
  */
 
+
 var codigo = "";
 
 $(document).on('keyup', '#leitor', function () {
@@ -12,27 +13,58 @@ $(document).on('keyup', '#leitor', function () {
 
 $(document).on('click', '#analisar', function () {
 
-    console.log(codigo);
+    var TOKENS = [
+        {name: 'EMPTY', regex: /^(\s+)/},
+        {name: 'ABRE_CHAVE', regex: /^({)/},
+        {name: 'FECHA_CHAVE', regex: /^(})/},
+        {name: 'FLUXO_DE_CONTROLE', regex: /^(if|else|while|do|for|foreach|switch)/},
+        {name: 'VARIAVEL', regex: /(^\$[a-zA-Z]+)/},
+        {name: 'COMPARACAO', regex: /^(==|&&|\|\|)/},
+        {name: 'ABRE_PARENTESES', regex: /(^\()/},
+        {name: 'FECHA_PARENTESES', regex: /(^\))/},
+        {name: 'NUMERO', regex: /(^[0-9]+)/},
+        {name: 'RESERVADA', regex: /^(break|case|continue|as|cacth|try|include|echo|die|final|class|new|or|private|protected|use|require|require_once|var|throw|)/},
+    ];
 
-    var id = new Token('id','ID');
-    var op = new Token('op', 'OP');
+    // CHAMA A FUNÇÃO TOKENIZER PASSANDO O CODIGO A SER ANALIZADO E AS REGRAS
+    // A FUNÇÃO RETORNA UM ARRAY DEVIDAMENTE SEPARADO COM O TOKEN E O LEXEMA
+    var arrayTokens = tokenizer(codigo, TOKENS);
+
+    console.log(arrayTokens);
+
+    $('#myTable').remove();
+
+    var table = '<table id="myTable" class="table table-responsive">'+
+                '<thead>'+
+                    '<tr>'+
+                        '<th>TOKEN</th>'+
+                        '<th>LEXEMA</th>'+
+                    '</tr>'+
+                '</thead>'+
+                '<tbody>'+
+                '</tbody>';
+
+    $.each(arrayTokens, function (index, item) {
+
+        console.log(item);
+
+        table += '<tr>' +
+                    '<td>'+ item[0] +'</td>' +
+                    '<td>'+ item[1] +'</td>' +
+                '</tr>';
+
+    });
+
+    table += '</table>';
+
+    $('#content').append(table);
+
+    // CHAMA O MODAL COM A TABELA DE TOKENS E LEXEMAS
+    $('.modal-title').text('Análise Léxica');
+    $('#myModal').modal('show');
+    $('.addCavalo').show();
 
 
-// mostrando as propriedades nome dos objetos
-    console.log('tipo é ' + id.tipo); // envia "tipo é id" ao log
-    console.log('valor é ' + id.valor); // envia "valor é ID" ao log
 
-
-    // codigo de teste
-
-
-    // <?php
-    //     $array = array(1, 2, 3, 4, 5);
-    // print_r($array);
-    //
-    // foreach ($array as $i => $value) {
-    //     unset($array[$i]);
-    // }
-    // print_r($array);
 });
 
