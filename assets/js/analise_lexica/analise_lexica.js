@@ -23,6 +23,8 @@ $(document).on('click', '#analisar', function () {
         {name: 'ABRE_PARENTESES', regex: /(^\()/},
         {name: 'FECHA_PARENTESES', regex: /(^\))/},
         {name: 'NUMERO', regex: /(^[0-9]+)/},
+        {name: 'IGUAL', regex: /(^=)/},
+        {name: 'ERRADAS', regex: /(^[A-Za-z])/},
         {name: 'RESERVADA', regex: /^(break|case|continue|as|cacth|try|include|echo|die|final|class|new|or|private|protected|use|require|require_once|var|throw|)/},
     ];
 

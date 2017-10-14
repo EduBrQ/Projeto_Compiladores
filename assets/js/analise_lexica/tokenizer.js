@@ -61,12 +61,14 @@ function tokenizer(codigo,TOKENS) {
             else if (tokenName in {'EMPTY': 1}) {
                 // descarte, não nos importamos com espaços e quebras de linha.
             }
-            else {
+            else if(tokenName in {'ERRADAS': 1}) {
+                //palavras doidas
+            }
+            else if(tokenName in {'EMPTY': 1}) {
                 // nestes casos o relacionamento entre o nome do token
                 // e o lexeme é 1<->1 então não precisamos adicionar o lexeme.
                 outputTokenList.push([tokenName]);
             }
-
             break;
         }
 
