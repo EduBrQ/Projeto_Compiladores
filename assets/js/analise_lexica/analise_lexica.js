@@ -31,7 +31,7 @@ $(document).on('click', '#analisar', function () {
     // A FUNÇÃO RETORNA UM ARRAY DEVIDAMENTE SEPARADO COM O TOKEN E O LEXEMA
     var arrayTokens = tokenizer(codigo, TOKENS);
 
-    console.log(arrayTokens);
+    // console.log(arrayTokens);
 
     $('#myTable').remove();
 
@@ -58,8 +58,6 @@ function geraTabeta(arrayTokens) {
                     '</tbody>';
 
     $.each(arrayTokens, function (index, item) {
-
-        console.log(item);
 
         table +=    '<tr>' +
                         '<td>'+ item[0] +'</td>' +

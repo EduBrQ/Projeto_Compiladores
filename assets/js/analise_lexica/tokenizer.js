@@ -2,7 +2,7 @@
  * Created by eduardobq3 on 01/10/2017.
  */
 
-function tokenizer(codigo,TOKENS) {
+function tokenizer(codigo, TOKENS) {
 
     var text = codigo;
 
@@ -42,7 +42,9 @@ function tokenizer(codigo,TOKENS) {
             // na próxima iteração
             text = text.substring(lexeme.length);
 
-            var set =  {
+            console.log(text);
+
+            var set = {
                 'FECHA_CHAVE': 1,
                 'ABRE_CHAVE': 1,
                 'FLUXO_DE_CONTROLE': 1,
@@ -50,8 +52,8 @@ function tokenizer(codigo,TOKENS) {
                 'COMPARACAO': 1,
                 'ABRE_PARENTESES': 1,
                 'FECHA_PARENTESES': 1,
-                'NUMERO' : 1,
-                'RESERVADA' : 1,
+                'NUMERO': 1,
+                'RESERVADA': 1,
                 'IGUAL': 1
             };
 
@@ -62,17 +64,10 @@ function tokenizer(codigo,TOKENS) {
             else if (tokenName in {'EMPTY': 1}) {
                 // descarte, não nos importamos com espaços e quebras de linha.
             }
-            else if(tokenName in {'ERRADAS': 1}) {
-                //palavras doidas
+            else {
                 throw 'Errado Porra!!!:\n' +
                 (text.substring(0, text.indexOf('\n')));
                 break;
-
-            }
-            else if(tokenName in {'EMPTY': 1}) {
-                // nestes casos o relacionamento entre o nome do token
-                // e o lexeme é 1<->1 então não precisamos adicionar o lexeme.
-                outputTokenList.push([tokenName]);
             }
             break;
         }
