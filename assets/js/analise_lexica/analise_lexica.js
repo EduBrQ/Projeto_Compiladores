@@ -13,6 +13,7 @@ $(document).on('keyup', '#leitor', function () {
 $(document).on('click', '#analisar', function () {
 
     var TOKENS = [
+        {name: 'RESERVADA', regex: /^(break|case|continue|as|cacth|try|include|echo|die|final|class|new|or|private|protected|use|require|require_once|var|throw)/},
         {name: 'EMPTY', regex: /^(\s+)/},
         {name: 'ABRE_CHAVE', regex: /^({)/},
         {name: 'FECHA_CHAVE', regex: /^(})/},
@@ -24,15 +25,23 @@ $(document).on('click', '#analisar', function () {
         {name: 'NUMERO', regex: /(^[0-9]+)/},
         {name: 'IGUAL', regex: /(^=)/},
         {name: 'ERRADAS', regex: /(^[A-Za-z])/},
-        {name: 'RESERVADA', regex: /^(break|case|continue|as|cacth|try|include|echo|die|final|class|new|or|private|protected|use|require|require_once|var|throw)/},
-        {name: 'PONTO_VIRGULA', regex: /^(;)/},
+        {name: 'PONTO E VIRGULA', regex: /^(;)/},
+        {name: 'CLASSE', regex: /^class/},
+
+        //COMPARADORES E INCREMENTOS
+        {name: 'MENOR OU IGUAL', regex: /^(<=)/},
+        {name: 'MAIOR OU IGUAL', regex: /^(>=)/},
         {name: 'INCREMENTO', regex: /(^\+\+)/},
-        {name: 'DECREMENTO', regex: /(^\-\-)/},
+        {name: 'DECREMENTO', regex: /(^--)/},
+        {name: 'MAIOR', regex: /^(>)/},
+        {name: 'MENOR', regex: /^(<)/},
 
         //OPERADORES ARITMETICOS
         {name: 'SOMA', regex: /(^\+)/},
-        {name: 'SUBT', regex: /(^\-)/},
+        {name: 'SUBT', regex: /(^-)/},
         {name: 'MULTIPLICACAO', regex: /(^\*)/ },
+        {name: 'DIVISAO', regex: /(^\[/])/ },
+
 
 
     ];
